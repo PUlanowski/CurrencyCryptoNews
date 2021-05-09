@@ -1,0 +1,1 @@
+aws s3api create-bucket --bucket cnn-storage --region us-east-1

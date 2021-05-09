@@ -1,0 +1,60 @@
+#to update for aws cli!
+
+Instance
+Configuration
+DB instance ID
+ccn
+Engine version
+12.5
+DB name
+-
+License model
+Postgresql License
+Option groups
+default:postgres-12
+Amazon Resource Name (ARN)
+arn:aws:rds:us-east-1:772813384031:db:ccn
+Resource ID
+db-AO26FSTQYMGSBSWMPZZDAAFERU
+Created time
+Sun May 09 2021 15:07:07 GMT+0200 (Central European Summer Time)
+Parameter group
+default.postgres12 (in-sync)
+Deletion protection
+Disabled
+Instance class
+Instance class
+db.t3.micro
+vCPU
+2
+RAM
+1 GB
+Availability
+Master username
+postgres
+IAM DB authentication
+Not enabled
+Multi-AZ
+No
+Secondary Zone
+-
+Storage
+Encryption
+Enabled
+AWS KMS key
+aws/rds
+Storage type
+General Purpose (SSD)
+IOPS
+-
+Storage
+20 GiB
+Storage autoscaling
+Disabled
+Performance Insights
+Performance Insights enabled
+Yes
+AWS KMS key
+aws/rds
+Retention period
+7 days
