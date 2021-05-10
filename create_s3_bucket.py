@@ -3,8 +3,7 @@ import boto3
 import configparser
 import logging
 from botocore.exceptions import ClientError
-
-logging.getLogger().setLevel(logging.INFO)
+logging = logging.getLogger().setLevel(logging.INFO)
 
 bucket_name = 'cnn-storage'
 

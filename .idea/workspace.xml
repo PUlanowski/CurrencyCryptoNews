@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/aws.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cli_create_emr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cli_create_rds" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cli_create_s3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create_s3_bucket.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fetch_resources.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/move_resources_to_s3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/aws.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_cli_create_emr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_cli_create_rds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_cli_create_s3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_s3_bucket.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_s3_bucket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.csv" beforeDir="false" afterPath="$PROJECT_DIR$/create_emr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.json" beforeDir="false" afterPath="$PROJECT_DIR$/stage_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1sAuJQVKkuWU8pjja40ELR7ilpZ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -44,7 +50,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Python.move_resources_to_s3">
+  <component name="RunManager" selected="Python.fetch_resources">
+    <configuration name="create_emr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Capstone Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_emr.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="create_s3_bucket" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Capstone Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,9 +141,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.fetch_resources" />
+        <item itemvalue="Python.create_emr" />
         <item itemvalue="Python.move_resources_to_s3" />
         <item itemvalue="Python.create_s3_bucket" />
-        <item itemvalue="Python.fetch_resources" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +158,9 @@
       <updated>1620327645065</updated>
       <workItem from="1620327646335" duration="755000" />
       <workItem from="1620549812286" duration="15542000" />
-      <workItem from="1620576027348" duration="7252000" />
+      <workItem from="1620576027348" duration="7285000" />
+      <workItem from="1620585969225" duration="53000" />
+      <workItem from="1620669883073" duration="13980000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -145,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620575638147</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="09.05.2021 files can be moved to S3">
+      <created>1620585843233</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620585843233</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,11 +204,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value=".gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore" />
+    <MESSAGE value="09.05.2021 files can be moved to S3" />
+    <option name="LAST_COMMIT_MESSAGE" value="09.05.2021 files can be moved to S3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Capstone_Project$create_emr.coverage" NAME="create_emr Coverage Results" MODIFIED="1620680461735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_s3_bucket.coverage" NAME="create_s3_bucket Coverage Results" MODIFIED="1620585636242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Capstone_Project$move_resources_to_s3.coverage" NAME="move_resources_to_s3 Coverage Results" MODIFIED="1620585763836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Capstone_Project$fetch_resources.coverage" NAME="fetch_resources Coverage Results" MODIFIED="1620578768424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone_Project$move_resources_to_s3.coverage" NAME="move_resources_to_s3 Coverage Results" MODIFIED="1620673519694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone_Project$fetch_resources.coverage" NAME="fetch_resources Coverage Results" MODIFIED="1620681789689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
