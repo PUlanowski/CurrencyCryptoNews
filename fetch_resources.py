@@ -27,7 +27,9 @@ def fetch_wallstreetbets():
     kaggle_path = 'wallstreetbets-subreddit-submissions'
     kaggle_file = 'wallstreetbets_submission.json'
     api.dataset_download_file(kaggle_usr +'/'+ kaggle_path, kaggle_file)
-
+    with ZipFile(kaggle_file+'.zip', 'r') as zipObj:
+       zipObj.extractall()
+    os.remove(kaggle_file+'.zip')
 if __name__=="__main__":
     fetch_ccy()
     fetch_crypto_ccy()

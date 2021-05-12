@@ -1,32 +1,13 @@
-#!/usr/bin/python3
-import psycopg2
-import configparser
-from sql_queries import *
+import iso4217
 
-config = configparser.ConfigParser()
-config.read('cfg.cfg')
+ccy_dict = iso4217.raw_table
 
-#setting up fresh database
-conn = psycopg2.connect(
-    host = config['RDS']['ENDPOINT'],
-    user = config['RDS']['USER'],
-    password = config['RDS']['PASSWORD'],
-    port = config['RDS']['PORT'])
-cur = conn.cursor()
-cur.execute ('CREATE DATABASE '+config['RDS']['DBNAME'])
-cur.commit()
-conn.close()
+max_num = len(ccy_dict)
 
-#establishing connection with new database
-conn = psycopg2.connect(
-    host = config['RDS']['ENDPOINT'],
-    dbname = config['RDS']['DBNAME'],
-    user = config['RDS']['USER'],
-    password = config['RDS']['PASSWORD'],
-    port = config['RDS']['PORT'])
-cur = conn.cursor()
-conn.autocommit = True
+for i in range(max_num):
+    ccy = (list(ccy_dict_v)[i]).get('Ccy')
+    print(ccy)
 
-cur.execute('CREATE TABLE test (one varchar);')
-cur.execute('DROP TABLE test')
-
+for i in range(max_num):
+    ccy_nm = (list(ccy_dict_v)[i]).get('CcyNm')
+    print(ccy_nm)

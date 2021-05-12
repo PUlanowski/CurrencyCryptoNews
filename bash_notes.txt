@@ -1,0 +1,13 @@
+#secure copy to EC2
+scp -C -i ./pw.ambari.study.pem -r ./'Capstone Project' hadoop@ec2-3-239-92-240.compute-1.amazonaws.com:~/Capstone
+#getting pip on EC2
+curl -O https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+pip install kaggle
+cd /home/hadoop/.kaggle
+vim kaggle.json
+#paste data from downloaded kaggle token
+cd ~/.kaggle/kaggle/.json
+chmod 600 kaggle.json
+cd ~/Capstone/
+python fetch_resources.py
