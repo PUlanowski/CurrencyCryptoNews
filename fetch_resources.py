@@ -28,9 +28,7 @@ def fetch_wallstreetbets():
     kaggle_file = 'wallstreetbets_submission.json'
     api.dataset_download_file(kaggle_usr +'/'+ kaggle_path, kaggle_file)
 
-
 if __name__=="__main__":
     fetch_ccy()
-    #fetch_crypto_ccy()
-    #fetch_wallstreetbets()
-
+    fetch_crypto_ccy()
+    fetch_wallstreetbets()

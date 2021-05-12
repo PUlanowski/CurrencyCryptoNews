@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import boto3
-import  configparser
+import configparser
 import logging
 from botocore.exceptions import ClientError
 
@@ -10,7 +10,7 @@ logger = logging.getLogger()
 
 def emr_client_start():
     config = configparser.ConfigParser()
-    config.read('aws.cfg')
+    config.read('cfg.cfg')
     global emr_client
     emr_client = boto3.client(
         'emr',
