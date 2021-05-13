@@ -24,7 +24,7 @@ def create_rds():
     try:
         rds.create_db_instance(DBInstanceIdentifier=db_identifier,
                                AllocatedStorage=5,
-                               DBName=['RDS']['DBNAME'],
+                               DBName=config['RDS']['DBNAME'],
                                Engine='postgres',
                                StorageType='standard',
                                StorageEncrypted=False,
@@ -32,7 +32,9 @@ def create_rds():
                                MultiAZ=False,
                                MasterUsername=config['RDS']['USER'],
                                MasterUserPassword=config['RDS']['PASSWORD'],
-                               DBInstanceClass='db.t3.micro')
+                               DBInstanceClass='db.t3.micro',
+                               EnableIAMDatabaseAuthentication=True,
+                               )
 
         print('Starting RDS instance with ID: {}'.format(db_identifier))
 
