@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/staging_rds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nosql_queries.cql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bash_notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bash_notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging_emr.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_emr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging_hbase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copy_to_rds.sh" beforeDir="false" afterPath="$PROJECT_DIR$/copy_to_rds.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_emr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_rds.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_s3_bucket.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/move_resources_to_s3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_queries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging_emr.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_nosql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging_rds.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_rdb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +141,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="staging_rds" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="staging_rdb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Capstone Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,7 +154,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\pit\Google Drive\Udacity\Capstone Project\staging_rds.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\pit\Google Drive\Udacity\Capstone Project\staging_rdb.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,7 +167,7 @@
       <list>
         <item itemvalue="Python.create_emr" />
         <item itemvalue="Python.create_keyspaces" />
-        <item itemvalue="Python.staging_rds" />
+        <item itemvalue="Python.staging_rdb" />
         <item itemvalue="Python.create_rds" />
         <item itemvalue="Python.create_aurora" />
       </list>
@@ -186,7 +190,7 @@
       <workItem from="1620818733406" duration="24292000" />
       <workItem from="1620888554925" duration="32141000" />
       <workItem from="1620986719393" duration="5642000" />
-      <workItem from="1621239494155" duration="12182000" />
+      <workItem from="1621239494155" duration="24918000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -258,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621008324075</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="last cloud based commit - rest in docer for this edition">
+      <created>1621272264561</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1621272264561</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +298,8 @@
     <MESSAGE value="12.05.2021#3" />
     <MESSAGE value="2021.05.13" />
     <MESSAGE value="2021.05.14" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.05.14" />
+    <MESSAGE value="last cloud based commit - rest in docer for this edition" />
+    <option name="LAST_COMMIT_MESSAGE" value="last cloud based commit - rest in docer for this edition" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

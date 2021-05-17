@@ -9,19 +9,32 @@ import pandas as pd
 import itertools
 from datetime import datetime
 
-def create_postgress_conn():
-    config = configparser.ConfigParser()
-    config.read('cfg.cfg')
+config = configparser.ConfigParser()
+config.read('cfg.cfg')
+
+def create_postgress_db():
     conn = psycopg2.connect(
-        host=config['RDS']['ENDPOINT'],
-        dbname=config['RDS']['DBNAME'],
-        user=config['RDS']['USER'],
-        password=config['RDS']['PASSWORD'],
-        port=config['RDS']['PORT'])
+        host = config['POSTGRES']['HOST'],
+        user = config['POSTGRES']['USER'],
+        password =config['POSTGRES']['PASS'],
+        port = config['POSTGRES']['PORT']
+    )
+    cur = conn.cursor()
+    conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+    cur.execute(sql.SQL(sql_queries.create_postgres_db))
+    conn.close()
+
+def reconecct_to_db():
+    conn = psycopg2.connect(
+        host = config['POSTGRES']['HOST'],
+        user = config['POSTGRES']['USER'],
+        database = config['POSTGRES']['DATABASE'],
+        password =config['POSTGRES']['PASS'],
+        port = config['POSTGRES']['PORT']
+    )
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
     global cur
     cur = conn.cursor()
-
     return cur
 
 def stage_ccy_mapping(cur):
@@ -40,8 +53,6 @@ def stage_ccy_mapping(cur):
             ("'"+ccy+"'" , "'"+ccy_nm+"'")))
 
 def stage_ccy_rates(cur):
-    config = configparser.ConfigParser()
-    config.read('cfg.cfg')
     data = pd.read_csv(config['KAGGLE']['CCY'])
     row_no = len(data)
     #print for SQL create statement
@@ -70,7 +81,8 @@ def stage_crypto(cur):
 
 
 if __name__=="__main__":
-    create_postgress_conn()
+    create_postgress_db()
+    reconecct_to_db()
     stage_ccy_mapping(cur)
     stage_ccy_rates(cur)
     stage_crypto(cur)

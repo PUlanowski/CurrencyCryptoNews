@@ -5,11 +5,11 @@ drop_ccy_rates = 'DROP TABLE IF EXISTS ccy_rates;'
 drop_crypto = 'DROP TABLE IF EXISTS ccy_crypto;'
 
 
+#CREATE DATABASES
+
+create_postgres_db = 'CREATE DATABASE cnn'
+
 #CREATE STAGING TABLES
-
-
-
-#CREATE TABLES
 
 create_ccy_map = 'CREATE TABLE IF NOT EXISTS ccy_map( \
                   ccy VARCHAR(3), \
@@ -40,5 +40,4 @@ create_crypto = 'CREATE TABLE IF NOT EXISTS ccy_crypto( \
 #INSERT VALUES
 
 insert_ccy_map = 'INSERT INTO ccy_map(ccy, ccy_full) VALUES ({},{});'
-
 
