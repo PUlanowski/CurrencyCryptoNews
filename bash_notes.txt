@@ -11,3 +11,9 @@ cd ~/.kaggle/kaggle/.json
 chmod 600 kaggle.json
 cd ~/Capstone/
 python fetch_resources.py
+
+to work with AWS Keyspaces:
+1. get cert from website: curl https://certs.secureserver.net/repository/sf-class2-root.crt -O
+
+User Name: keyspaces-at-772813384031
+Password: xIxEbQu5zdPXAzY0Ydw1Lge36FKwPri6M6PDlweyLhQ=

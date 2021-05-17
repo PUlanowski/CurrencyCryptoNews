@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/staging_hbase.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staging_rds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_emr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bash_notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bash_notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging_emr.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_emr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging_hbase.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +93,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="create_keyspaces" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Capstone Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_keyspaces.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="create_rds" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Capstone Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,7 +137,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_rds_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="staging_rds" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Capstone Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -125,29 +150,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_rds_db.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="staging_emr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Capstone Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\pit\Google Drive\Udacity\Capstone Project\staging_emr.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\pit\Google Drive\Udacity\Capstone Project\staging_rds.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,10 +162,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.create_emr" />
-        <item itemvalue="Python.staging_emr" />
+        <item itemvalue="Python.create_keyspaces" />
+        <item itemvalue="Python.staging_rds" />
         <item itemvalue="Python.create_rds" />
         <item itemvalue="Python.create_aurora" />
-        <item itemvalue="Python.create_rds_db" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +185,8 @@
       <workItem from="1620744257655" duration="12700000" />
       <workItem from="1620818733406" duration="24292000" />
       <workItem from="1620888554925" duration="32141000" />
-      <workItem from="1620986719393" duration="5596000" />
+      <workItem from="1620986719393" duration="5642000" />
+      <workItem from="1621239494155" duration="12182000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -247,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620940961347</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="2021.05.14">
+      <created>1621008324075</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1621008324075</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +286,8 @@
     <MESSAGE value="12.05.2021#2 updating .gitignore" />
     <MESSAGE value="12.05.2021#3" />
     <MESSAGE value="2021.05.13" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.05.13" />
+    <MESSAGE value="2021.05.14" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.05.14" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -291,11 +303,12 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Capstone_Project$create_aurora.coverage" NAME="create_aurora Coverage Results" MODIFIED="1620932047180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_rds_db.coverage" NAME="create_rds_db Coverage Results" MODIFIED="1620846339033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Capstone_Project$create_emr.coverage" NAME="create_emr Coverage Results" MODIFIED="1620992205013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone_Project$create_emr.coverage" NAME="create_emr Coverage Results" MODIFIED="1621266393291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_s3_bucket.coverage" NAME="create_s3_bucket Coverage Results" MODIFIED="1620585636242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$move_resources_to_s3.coverage" NAME="move_resources_to_s3 Coverage Results" MODIFIED="1620673519694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$fetch_resources.coverage" NAME="fetch_resources Coverage Results" MODIFIED="1620819380291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_rds.coverage" NAME="create_rds Coverage Results" MODIFIED="1620932300440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone_Project$create_keyspaces.coverage" NAME="create_keyspaces Coverage Results" MODIFIED="1621259847588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$staging.coverage" NAME="staging Coverage Results" MODIFIED="1620939575085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
