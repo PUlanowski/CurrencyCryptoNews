@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/nosql_queries.cql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copy_to_rds.sh" beforeDir="false" afterPath="$PROJECT_DIR$/copy_to_rds.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_emr.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_rds.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_s3_bucket.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/move_resources_to_s3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_queries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging_emr.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_nosql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging_rds.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_rdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fetch_resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/fetch_resources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nosql_queries.cql" beforeDir="false" afterPath="$PROJECT_DIR$/nosql_queries.cql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging_nosql.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_nosql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +45,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/wallstreetbets_submission.json" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RunManager" selected="Python.create_emr">
     <configuration name="create_aurora" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -190,7 +186,9 @@
       <workItem from="1620818733406" duration="24292000" />
       <workItem from="1620888554925" duration="32141000" />
       <workItem from="1620986719393" duration="5642000" />
-      <workItem from="1621239494155" duration="24918000" />
+      <workItem from="1621239494155" duration="24967000" />
+      <workItem from="1621358557839" duration="5335000" />
+      <workItem from="1621364037753" duration="8080000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -269,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621272264561</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="2021.05.17 - docker refactor">
+      <created>1621285556709</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1621285556709</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +304,8 @@
     <MESSAGE value="2021.05.13" />
     <MESSAGE value="2021.05.14" />
     <MESSAGE value="last cloud based commit - rest in docer for this edition" />
-    <option name="LAST_COMMIT_MESSAGE" value="last cloud based commit - rest in docer for this edition" />
+    <MESSAGE value="2021.05.17 - docker refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.05.17 - docker refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

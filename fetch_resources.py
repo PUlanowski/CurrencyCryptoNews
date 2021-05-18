@@ -30,6 +30,7 @@ def fetch_wallstreetbets():
     with ZipFile(kaggle_file+'.zip', 'r') as zipObj:
        zipObj.extractall()
     os.remove(kaggle_file+'.zip')
+
 if __name__=="__main__":
     fetch_ccy()
     fetch_crypto_ccy()
