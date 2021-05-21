@@ -42,7 +42,10 @@ def stage_wallstreetbets():
     title text, \
     url text, \
     post_hint text, \
-    PRIMARY KEY (created_utc, domain));'
+    banned_by text, \
+    link_flair_text text, \
+    contest_mode boolean, \
+    PRIMARY KEY ((author, id),created_utc_date));'
     session.execute(create_table_all)
 
 
@@ -64,24 +67,53 @@ def insert_data():
         wb[i].pop('secure_media_embed', None)
         wb[i].pop('secure_media', None)
         wb[i].pop('user_reports', None)
+        wb[i].pop('preview', None)
+        wb[i].pop('locked', None)
+        wb[i].pop('link_flair_css_class', None)
+        wb[i].pop('spoiler', None)
+        wb[i].pop('brand_safe', None)
+        wb[i].pop('suggested_sort', None)
+        wb[i].pop('author_cakeday', None)
+        wb[i].pop('thumbnail_height', None)
+        wb[i].pop('thumbnail_width', None)
+        wb[i].pop('is_video', None)
+        wb[i].pop('approved_at_utc', None)
+        wb[i].pop('banned_at_utc', None)
+        wb[i].pop('can_mod_post', None)
+        wb[i].pop('view_count', None)
 
-        if 'selftext' in wb[i]:
-            st = wb[i]['selftext']
-            st = st.replace("'","''")
-            wb[i]['selftext'] = st
 
         tt = wb[i]['title']
         tt = tt.replace("'","''")
         wb[i]['title'] = tt
 
-        aft = wb[i]['author_flair_text']
-        aft = tt.replace("'", "''")
-        wb[i]['author_flair_text'] = aft
+        url = wb[i]['url']
+        url = url.replace("'","''")
+        wb[i]['url'] = url
+
+
 
         if 'description' in wb[i]:
             ds = wb[i]['description']
             ds = st.replace("'","''")
             wb[i]['description'] = ds
+
+        if 'selftext' in wb[i]:
+            st = wb[i]['selftext']
+            st = st.replace("'", "''")
+            wb[i]['selftext'] = st
+
+        if 'author_flair_text' in wb[i]:
+            if wb[i]['author_flair_text'] is not None:
+                aft = wb[i]['author_flair_text']
+                aft = aft.replace("'", "''")
+                wb[i]['author_flair_text'] = aft
+
+        if 'link_flair_text' in wb[i]:
+            lft = wb[i]['link_flair_text']
+            lft = lft.replace("'", "''")
+            wb[i]['link_flair_text'] = lft
+
 
         j = json.dumps(wb[i])
 

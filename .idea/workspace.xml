@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nosql_queries.cql" beforeDir="false" afterPath="$PROJECT_DIR$/nosql_queries.cql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staging_nosql.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_nosql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,6 +193,7 @@
       <workItem from="1621358557839" duration="5335000" />
       <workItem from="1621364037753" duration="8080000" />
       <workItem from="1621414765859" duration="25619000" />
+      <workItem from="1621587357617" duration="17650000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -328,7 +328,7 @@
     <SUITE FILE_PATH="coverage/Capstone_Project$create_rds_db.coverage" NAME="create_rds_db Coverage Results" MODIFIED="1620846339033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_emr.coverage" NAME="create_emr Coverage Results" MODIFIED="1621266393291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_s3_bucket.coverage" NAME="create_s3_bucket Coverage Results" MODIFIED="1620585636242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Capstone_Project$staging_nosql.coverage" NAME="staging_nosql Coverage Results" MODIFIED="1621454181122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone_Project$staging_nosql.coverage" NAME="staging_nosql Coverage Results" MODIFIED="1621624849085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$move_resources_to_s3.coverage" NAME="move_resources_to_s3 Coverage Results" MODIFIED="1620673519694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$fetch_resources.coverage" NAME="fetch_resources Coverage Results" MODIFIED="1620819380291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_rds.coverage" NAME="create_rds Coverage Results" MODIFIED="1620932300440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
