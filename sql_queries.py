@@ -41,3 +41,13 @@ create_crypto = 'CREATE TABLE IF NOT EXISTS ccy_crypto( \
 
 insert_ccy_map = 'INSERT INTO ccy_map(ccy, ccy_full) VALUES ({},{});'
 
+#CREATE FACT & DIMENSION TABLES
+
+fact_table = 'CREATE TABLE IF NOT EXISTS fact( \
+                     date DATE,\
+                     symbol VARCHAR, \
+                     market VARCHAR);'
+
+dim_table = 'CREATE TABLE IF NOT EXISTS dim_ccy_{}( \
+                    date DATE, \
+                    closure_rate FLOAT);'
