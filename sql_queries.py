@@ -3,7 +3,9 @@
 drop_ccy_map = 'DROP TABLE IF EXISTS ccy_map;'
 drop_ccy_rates = 'DROP TABLE IF EXISTS ccy_rates;'
 drop_crypto = 'DROP TABLE IF EXISTS ccy_crypto;'
-
+drop_dim_ccy = 'DROP TABLE IF EXISTS dim_ccy_{}'
+drop_dim_crypto = 'DROP TABLE IF EXISTS dim_crypto_{}'
+drop_fact = 'DROP TABLE IF EXISTS fact'
 
 #CREATE DATABASES
 
@@ -41,13 +43,25 @@ create_crypto = 'CREATE TABLE IF NOT EXISTS ccy_crypto( \
 
 insert_ccy_map = 'INSERT INTO ccy_map(ccy, ccy_full) VALUES ({},{});'
 
+insert_fact = 'INSERT INTO fact(symbol, type) VALUES ({},{});'
+
 #CREATE FACT & DIMENSION TABLES
 
 fact_table = 'CREATE TABLE IF NOT EXISTS fact( \
-                     date DATE,\
                      symbol VARCHAR, \
-                     market VARCHAR);'
+                     type VARCHAR);'
 
-dim_table = 'CREATE TABLE IF NOT EXISTS dim_ccy_{}( \
+dim_ccy = 'CREATE TABLE IF NOT EXISTS dim_ccy_{}( \
+                    type VARCHAR, \
                     date DATE, \
+                    name VARCHAR, \
                     closure_rate FLOAT);'
+
+dim_crypto = 'CREATE TABLE IF NOT EXISTS dim_crypto_{}( \
+                    type VARCHAR, \
+                    date DATE, \
+                    name VARCHAR, \
+                    closure_rate FLOAT, \
+                    close_ratio FLOAT, \
+                    spread FLOAT);'
+

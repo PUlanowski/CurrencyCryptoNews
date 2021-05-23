@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/final_rdb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staging_nosql_toRemove.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_rdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nosql_queries.cql" beforeDir="false" afterPath="$PROJECT_DIR$/nosql_queries.cql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_queries.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staging_nosql.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_nosql.py" afterDir="false" />
     </list>
@@ -44,7 +46,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/wallstreetbets_submission.json" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/wallstreetbets_submission.json&#10;C:/Users/pit/Google Drive/Udacity/Capstone Project/crypto-markets.csv" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
@@ -98,28 +100,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_rds" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Capstone Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_rds.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="staging_nosql" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Capstone Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -134,6 +114,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/staging_nosql.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="staging_nosql_toRemove" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Capstone Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\pit\Google Drive\Udacity\Capstone Project\staging_nosql_toRemove.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -167,10 +169,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.staging_nosql" />
+        <item itemvalue="Python.staging_nosql_toRemove" />
         <item itemvalue="Python.create_emr" />
         <item itemvalue="Python.create_keyspaces" />
         <item itemvalue="Python.staging_rdb" />
-        <item itemvalue="Python.create_rds" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +199,8 @@
       <workItem from="1621414765859" duration="25619000" />
       <workItem from="1621587357617" duration="17650000" />
       <workItem from="1621625999529" duration="54000" />
-      <workItem from="1621659160854" duration="9525000" />
+      <workItem from="1621659160854" duration="9589000" />
+      <workItem from="1621744749540" duration="24699000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -290,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621626026621</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="2021.05.21. staging Cassandra almost done + start building star schema">
+      <created>1621714223301</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1621714223301</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +332,8 @@
     <MESSAGE value="last cloud based commit - rest in docer for this edition" />
     <MESSAGE value="2021.05.17 - docker refactor" />
     <MESSAGE value="2021.05.21 possibly working cassandra loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.05.21 possibly working cassandra loader" />
+    <MESSAGE value="2021.05.21. staging Cassandra almost done + start building star schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.05.21. staging Cassandra almost done + start building star schema" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -340,7 +351,7 @@
     <SUITE FILE_PATH="coverage/Capstone_Project$create_rds_db.coverage" NAME="create_rds_db Coverage Results" MODIFIED="1620846339033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_emr.coverage" NAME="create_emr Coverage Results" MODIFIED="1621266393291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_s3_bucket.coverage" NAME="create_s3_bucket Coverage Results" MODIFIED="1620585636242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Capstone_Project$staging_nosql.coverage" NAME="staging_nosql Coverage Results" MODIFIED="1621712461274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone_Project$staging_nosql.coverage" NAME="staging_nosql Coverage Results" MODIFIED="1621787744548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$move_resources_to_s3.coverage" NAME="move_resources_to_s3 Coverage Results" MODIFIED="1620673519694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$fetch_resources.coverage" NAME="fetch_resources Coverage Results" MODIFIED="1620819380291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone_Project$create_rds.coverage" NAME="create_rds Coverage Results" MODIFIED="1620932300440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -53,168 +53,42 @@ def stage_wallstreetbets():
 
 def insert_data():
 
+    keys = ['created_utc_date', 'domain', 'author', 'author_created_utc', 'author_flair_css_class', 'author_flair_text', 'author_fullname', 'created_utc', 'distinguished', 'edited', 'full_link', 'gilded', 'id', 'is_self', 'num_comments', 'over_18', 'permalink', 'retrieved_on', 'score', 'selftext', 'stickied', 'subreddit', 'subreddit_id', 'thumbnail', 'title', 'url', 'post_hint', 'banned_by', 'link_flair_text', 'contest_mode', 'clicked']
     wb = []
-    for line in open('wallstreetbets_submission.json', 'r'):
+
+    for line in open(
+            'wallstreetbets_submission.json', 'r'):
         wb.append(json.loads(line))
 
     for i in range(0, len(wb)):
+        #removing unwanted keys
+        key_list = list(wb[i].keys())
+        for key in key_list:
+            if key not in keys:
+                wb[i].pop(key, None)
+
+        #appending time in date format
         t = wb[i].get('created_utc')
         d = datetime.fromtimestamp(t)
         d = d.date().strftime('%Y-%m-%d')
         wb[i]['created_utc_date'] = d
 
-        wb[i].pop('approved_at_utc', None)
-        wb[i].pop('saved', None)
-        wb[i].pop('mod_reason_title', None)
-        wb[i].pop('link_flair_richtext', None)
-        wb[i].pop('subreddit_name_prefixed', None)
-        wb[i].pop('hidden', None)
-        wb[i].pop('pwls', None)
-        wb[i].pop('link_flair_css_class', None)
-        wb[i].pop('downs', None)
-        wb[i].pop('thumbnail_height', None)
-        wb[i].pop('top_awarded_type', None)
-        wb[i].pop('hide_score', None)
-        wb[i].pop('name', None)
-        wb[i].pop('quarantine', None)
-        wb[i].pop('link_flair_text_color', None)
-        wb[i].pop('upvote_ratio', None)
-        wb[i].pop('author_flair_background_color', None)
-        wb[i].pop('subreddit_type', None)
-        wb[i].pop('ups', None)
-        wb[i].pop('total_awards_received', None)
-        wb[i].pop('media_embed', None)
-        wb[i].pop('thumbnail_width', None)
-        wb[i].pop('author_flair_template_id', None)
-        wb[i].pop('is_original_content', None)
-        wb[i].pop('user_reports', None)
-        wb[i].pop('secure_media', None)
-        wb[i].pop('is_reddit_media_domain', None)
-        wb[i].pop('is_meta', None)
-        wb[i].pop('category', None)
-        wb[i].pop('secure_media_embed', None)
-        wb[i].pop('can_mod_post', None)
-        wb[i].pop('approved_by', None)
-        wb[i].pop('author_premium', None)
-        wb[i].pop('author_flair_richtext', None)
-        wb[i].pop('gildings', None)
-        wb[i].pop('content_categories', None)
-        wb[i].pop('mod_note', None)
-        wb[i].pop('created', None)
-        wb[i].pop('link_flair_type', None)
-        wb[i].pop('wls', None)
-        wb[i].pop('removed_by_category', None)
-        wb[i].pop('author_flair_type', None)
-        wb[i].pop('allow_live_comments', None)
-        wb[i].pop('selftext_html', None)
-        wb[i].pop('likes', None)
-        wb[i].pop('suggested_sort', None)
-        wb[i].pop('banned_at_utc', None)
-        wb[i].pop('view_count', None)
-        wb[i].pop('archived', None)
-        wb[i].pop('no_follow', None)
-        wb[i].pop('is_crosspostable', None)
-        wb[i].pop('pinned', None)
-        wb[i].pop('all_awardings', None)
-        wb[i].pop('awarders', None)
-        wb[i].pop('media_only', None)
-        wb[i].pop('link_flair_template_id', None)
-        wb[i].pop('can_gild', None)
-        wb[i].pop('spoiler', None)
-        wb[i].pop('locked', None)
-        wb[i].pop('treatment_tags', None)
-        wb[i].pop('visited', None)
-        wb[i].pop('removed_by', None)
-        wb[i].pop('num_reports', None)
-        wb[i].pop('mod_reason_by', None)
-        wb[i].pop('removal_reason', None)
-        wb[i].pop('link_flair_background_color', None)
-        wb[i].pop('is_robot_indexable', None)
-        wb[i].pop('report_reasons', None)
-        wb[i].pop('discussion_type', None)
-        wb[i].pop('send_replies', None)
-        wb[i].pop('whitelist_status', None)
-        wb[i].pop('mod_reports', None)
-        wb[i].pop('author_patreon_flair', None)
-        wb[i].pop('author_flair_text_color', None)
-        wb[i].pop('parent_whitelist_status', None)
-        wb[i].pop('subreddit_subscribers', None)
-        wb[i].pop('num_crossposts', None)
-        wb[i].pop('media', None)
-        wb[i].pop('is_video', None)
-        wb[i].pop('crosspost_parent', None)
-        wb[i].pop('mod_reports', None)
-        wb[i].pop('secure_media_embed', None)
-        wb[i].pop('secure_media', None)
-        wb[i].pop('user_reports', None)
-        wb[i].pop('preview', None)
-        wb[i].pop('locked', None)
-        wb[i].pop('link_flair_css_class', None)
-        wb[i].pop('spoiler', None)
-        wb[i].pop('brand_safe', None)
-        wb[i].pop('suggested_sort', None)
-        wb[i].pop('author_cakeday', None)
-        wb[i].pop('thumbnail_height', None)
-        wb[i].pop('thumbnail_width', None)
-        wb[i].pop('is_video', None)
-        wb[i].pop('approved_at_utc', None)
-        wb[i].pop('banned_at_utc', None)
-        wb[i].pop('can_mod_post', None)
-        wb[i].pop('view_count', None)
-        wb[i].pop('parent_whitelist_status', None)
-        wb[i].pop('whitelist_status', None)
-        wb[i].pop('is_crosspostable', None)
-        wb[i].pop('num_crossposts', None)
-        wb[i].pop('pinned', None)
-        wb[i].pop('is_reddit_media_domain', None)
-        wb[i].pop('preview', None)
-        wb[i].pop('brand_safe', None)
-        wb[i].pop('author_cakeday', None)
-        wb[i].pop('crosspost_parent_list', None)
+        #escaping characters in body
+        txt_fields = ['title','url', 'description', 'selftext', 'author_flair_text', 'link_flair_text']
 
+        for field in txt_fields:
+            if field in key_list:
+                if wb[i][field] is not None:
+                    x = wb[i][field]
+                    x = x.replace("'","''")
+                    wb[i][field] = x
 
-        tt = wb[i]['title']
-        tt = tt.replace("'","''")
-        wb[i]['title'] = tt
-
-        url = wb[i]['url']
-        url = url.replace("'","''")
-        wb[i]['url'] = url
-
-
-
-        if 'description' in wb[i]:
-            ds = wb[i]['description']
-            ds = st.replace("'","''")
-            wb[i]['description'] = ds
-
-        if 'selftext' in wb[i]:
-            st = wb[i]['selftext']
-            st = st.replace("'", "''")
-            wb[i]['selftext'] = st
-
-        if 'author_flair_text' in wb[i]:
-            if wb[i]['author_flair_text'] is not None:
-                aft = wb[i]['author_flair_text']
-                aft = aft.replace("'", "''")
-                wb[i]['author_flair_text'] = aft
-
-        if 'link_flair_text' in wb[i]:
-            lft = wb[i]['link_flair_text']
-            lft = lft.replace("'", "''")
-            wb[i]['link_flair_text'] = lft
-
-
+        #parsing dict as json
         j = json.dumps(wb[i])
 
+        #inserting prepared json into database
         insert_json = 'INSERT INTO cnn.wallstreetbets_all JSON {}'.format("'"+j+"'")
         session.execute(insert_json)
-
-
-# from datetime import datetime
-# t = wb[0].get('created_utc')
-# d = date.fromtimestamp(t)
-# d = d.date()
 
 
 if __name__=="__main__":

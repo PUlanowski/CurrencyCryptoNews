@@ -44,23 +44,3 @@ CREATE KEYSPACE cnn WITH REPLICATION = {
     PRIMARY KEY (domain, created_utc));'
 
 
-
-author,
-author_flair_css_class,
-author_flair_text,
-created_utc,
-domain,
-full_link,
-id,
-is_self,
-num_comments,
-over_18,
-permalink,
-score,
-selftext,
-subreddit,
-subreddit_id,
-thumbnail,
-title,
-url,
-created_utc_date,
