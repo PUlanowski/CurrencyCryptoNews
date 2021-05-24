@@ -18,12 +18,12 @@ create_ccy_map = 'CREATE TABLE IF NOT EXISTS ccy_map( \
                   ccy_full VARCHAR \
                  );'
 
-create_ccy_rates = 'CREATE TABLE IF NOT EXISTS ccy_rates( \
+create_ccy_rates = 'CREATE TABLE IF NOT EXISTS ccy_rates_stage( \
                     date DATE, \
                     {} \
                  );'
 
-create_crypto = 'CREATE TABLE IF NOT EXISTS ccy_crypto( \
+create_crypto = 'CREATE TABLE IF NOT EXISTS ccy_crypto_stage( \
                      slug VARCHAR, \
                      symbol VARCHAR, \
                      name VARCHAR, \
@@ -38,12 +38,6 @@ create_crypto = 'CREATE TABLE IF NOT EXISTS ccy_crypto( \
                      close_ratio FLOAT, \
                      spread FLOAT \
                  );'
-
-#INSERT VALUES
-
-insert_ccy_map = 'INSERT INTO ccy_map(ccy, ccy_full) VALUES ({},{});'
-
-insert_fact = 'INSERT INTO fact(symbol, type) VALUES ({},{});'
 
 #CREATE FACT & DIMENSION TABLES
 
@@ -65,3 +59,28 @@ dim_crypto = 'CREATE TABLE IF NOT EXISTS dim_crypto_{}( \
                     close_ratio FLOAT, \
                     spread FLOAT);'
 
+
+#INSERT VALUES
+
+insert_ccy_map = 'INSERT INTO ccy_map(ccy, ccy_full) VALUES ({},{});'
+
+insert_fact = 'INSERT INTO fact(symbol, type) VALUES ({},{});'
+
+insert_dim_ccy = 'INSERT INTO dim_ccy_{}(date, closure_rate) \
+                SELECT date, {} \
+                FROM ccy_rates;'
+
+update_dim_ccy = 'UPDATE dim_ccy_{} SET type = "global", name = {};'
+
+create_crypto_view = 'CREATE VIEW temp_view AS \
+                        SELECT * FROM ccy_crypto \
+                          WHERE symbol = {};'
+insert_crypto = 'INSERT INTO dim_crypto_{}(date, name, closure_rate, \
+                close_ratio, spread) \
+                SELECT date, name, close, close_ratio, spread \
+                FROM ccy_crypto \
+                WHERE symbol = {};'
+
+update_crypto = "UPDATE dim_crypto_{} SET type = 'crypto';"
+
+drop_crypto_view = 'DROP VIEW temp_view;'

@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-import iso4217
 import sql_queries
 import psycopg2
 import configparser
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import pandas as pd
-import itertools
-from datetime import datetime
+
 
 config = configparser.ConfigParser()
 config.read('cfg.cfg')
@@ -27,68 +25,88 @@ def conecct_to_db():
 
 def create_star_schema(cur):
 
+    #create fact table
     cur.execute(sql.SQL(sql_queries.drop_fact))
     cur.execute(sql.SQL(sql_queries.fact_table))
 
-    ccy_dict = iso4217.raw_table
-    ccy_dict_v = ccy_dict.values()
-    max_num = len(ccy_dict)
-    global ccy_list
-    ccy_list = []
+    global ccy_map
+    global ccy_map_count
+    ccy_map = pd.read_csv(config['HELPERS']['CCYMAP'])
+    ccy_map_count = len(ccy_map) -1
+
+    for i in range(ccy_map_count):
+    #drop ccy dim tables
+        cur.execute(sql.SQL(sql_queries.drop_dim_ccy.format \
+                                (ccy_map['symbol'][i])))
+    #create ccy dim tables
+        cur.execute(sql.SQL(sql_queries.dim_ccy.format \
+                                (ccy_map['symbol'][i])))
+    ###
     global crypto
+    global crypto_count
     crypto = pd.read_csv(config['KAGGLE']['CRYPTO'])
-    crypto_dates = crypto.date
-    crypto_dates = crypto_dates.drop_duplicates()
     crypto = crypto.symbol
     crypto = crypto.drop_duplicates()
-    max_crypto_num = len(crypto)
-
-    for i in range(max_num):
-        ccy = (list(ccy_dict_v)[i]).get('Ccy')
-        ccy_list.append(ccy)
-
-    #changing symbol @ in crypto name to _ for db compliance reasons
-    for i in range(max_crypto_num):
+    crypto_count = len(crypto)
+    for i in range(crypto_count):
         if '@' in crypto.values[i]:
             cv = crypto.values[i]
             cv = cv.replace("@", "_")
             crypto.values[i] = cv
 
 
-    for i in range(max_num):
-        cur.execute(sql.SQL(sql_queries.drop_dim_ccy.format \
-                                (ccy_list[i])))
-        cur.execute(sql.SQL(sql_queries.dim_ccy.format \
-                                (ccy_list[i])))
-
-    for i in range(max_crypto_num):
+    #drop crypto dim tables
+    for i in range(crypto_count):
         cur.execute(sql.SQL(sql_queries.drop_dim_crypto.format \
                                 (crypto.values[i])))
-
-    for i in range(max_crypto_num):
+    #create crypto dim tables
+    for i in range(crypto_count):
         cur.execute(sql.SQL(sql_queries.dim_crypto.format \
                                 (crypto.values[i])))
 
-    return cur, crypto, ccy_list, crypto_dates
+    return cur, crypto, crypto_count, ccy_list, crypto_dates, ccy_nm_dict
 
-def insert_fact_data(cur, crypto, ccy_list, crypto_dates):
-    all_ccy = ccy_list + crypto.values.tolist()
-    global_ccy_no = len(ccy_list)
-    crypto_ccy_no = len(crypto.values.tolist())
-    type = []
-    for i in range(global_ccy_no):
-        type.append('Global')
-    for i in range(crypto_ccy_no):
-        type.append('Crypto')
+def insert_fact_data(cur, crypto, ccy_map):
+    crypto_list = crypto.values.tolist()
 
-
-    for i in range(len(all_ccy)):
+    #insert values into fact table - ccy
+    for i in range(ccy_map_count):
         cur.execute(sql.SQL(sql_queries.insert_fact.format
-                            ("'"+str(all_ccy[i])+"'",
-                             "'"+str(type[i])+"'")))
+                            ("'"+str(ccy_map['symbol'][i])+"'",
+                             "'"+'global'+"'")))
+
+    #insert values into fact table - crypto
+    for i in range(len(crypto_list)):
+        cur.execute(sql.SQL(sql_queries.insert_fact.format
+                            ("'"+str(crypto_list[i])+"'",
+                             "'"+'crypto'+"'")))
+
+def insert_dim_ccy(cur, ccy_map):
+
+    for i in range(ccy_map_count):
+        ccy = ccy_map['symbol'][i]
+        ccy = ccy.lower()
+        col_nm = ccy_map['col_name'][i]
+        cur.execute(sql.SQL(sql_queries.insert_dim_ccy.format(
+            ccy, col_nm)))
+
+        for i in range(ccy_map_count):
+            ccy = ccy_map['symbol'][i]
+            ccy = ccy.lower()
+            name = ccy_map['name'][i]
+            cur.execute(sql.SQL(
+                sql_queries.update_dim_ccy.format(
+                ccy, "'"+name+"'")))
 
 
+def insert_crypto(cur, crypto, crypto_count ):
 
-
-
-
+    for symbol in crypto:
+        symbol_l = symbol.lower()
+        cur.execute(sql.SQL(sql_queries.create_crypto_view.format(
+            "'"+symbol+"'")))
+        cur.execute(sql.SQL(sql_queries.insert_crypto.format(
+            symbol_l, "'"+symbol+"'" )))
+        cur.execute(sql.SQL(sql_queries.update_crypto.format(
+            symbol_l)))
+        cur.execute(sql.SQL(sql_queries.drop_crypto_view))

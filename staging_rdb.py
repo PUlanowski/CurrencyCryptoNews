@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import iso4217
 import sql_queries
 import psycopg2
 import configparser
@@ -38,37 +37,38 @@ def reconecct_to_db():
     return cur
 
 def stage_ccy_mapping(cur):
-    ccy_dict = iso4217.raw_table
-    ccy_dict_v = ccy_dict.values()
-    max_num = len(ccy_dict)
+    ccy_map = pd.read_csv(config['HELPERS']['CCYMAP'])
+    max_num = len(ccy_map) -1
 
     cur.execute(sql.SQL(sql_queries.drop_ccy_map))
     cur.execute(sql.SQL(sql_queries.create_ccy_map))
 
     for i in range(max_num):
-        ccy = (list(ccy_dict_v)[i]).get('Ccy')
-        ccy_nm = (list(ccy_dict_v)[i]).get('CcyNm')
-        if ccy != None:
-            cur.execute(sql.SQL(sql_queries.insert_ccy_map.format\
+        ccy = ccy_map['symbol'][i]
+        ccy_nm = ccy_map['name'][i]
+        cur.execute(sql.SQL(sql_queries.insert_ccy_map.format\
             ("'"+ccy+"'" , "'"+ccy_nm+"'")))
 
 def stage_ccy_rates(cur):
     data = pd.read_csv(config['KAGGLE']['CCY'])
-    row_no = len(data)
     #print for SQL create statement
     columns = data.columns
-    columns = columns.values[1:]
+    columns = list(columns)
+    columns = columns[1:]
     l_columns = []
-    cur.execute(sql.SQL(sql_queries.drop_ccy_rates))
 
     for col in columns:
         col = col.replace('.','')
         col = col.replace(' ','_')
+        col = col.lower()
         col = (col + ' FLOAT,')
         l_columns.append(col)
 
+
     s_columns = ' '.join(map(str, l_columns))
     s_columns = s_columns[:-1]
+
+    cur.execute(sql.SQL(sql_qu  qeries.drop_ccy_rates))
     cur.execute(sql.SQL(sql_queries.create_ccy_rates.format \
                         (s_columns)))
 

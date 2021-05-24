@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/staging_nosql_toRemove.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccy_map.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copy_to_rds.sh" beforeDir="false" afterPath="$PROJECT_DIR$/copy_to_rds.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_rdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nosql_queries.cql" beforeDir="false" afterPath="$PROJECT_DIR$/nosql_queries.cql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_queries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging_nosql.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_nosql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging_nosql_toRemove.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_rdb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +201,8 @@
       <workItem from="1621587357617" duration="17650000" />
       <workItem from="1621625999529" duration="54000" />
       <workItem from="1621659160854" duration="9589000" />
-      <workItem from="1621744749540" duration="24699000" />
+      <workItem from="1621744749540" duration="24755000" />
+      <workItem from="1621837901367" duration="37557000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -300,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621714223301</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="2021.05.23 - working cassandra json parser and input for fact tables">
+      <created>1621802859495</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1621802859495</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +342,8 @@
     <MESSAGE value="2021.05.17 - docker refactor" />
     <MESSAGE value="2021.05.21 possibly working cassandra loader" />
     <MESSAGE value="2021.05.21. staging Cassandra almost done + start building star schema" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.05.21. staging Cassandra almost done + start building star schema" />
+    <MESSAGE value="2021.05.23 - working cassandra json parser and input for fact tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.05.23 - working cassandra json parser and input for fact tables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

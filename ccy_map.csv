@@ -1,0 +1,52 @@
+name,name2,col_name,symbol
+Algerian Dinar,Algerian Dinar,algerian_dinar,DZD
+Australian Dollar, Australian Dollar, australian_dollar,AUD
+Bahraini Dinar,Bahrain Dinar, bahrain_dinar,BHD
+Boliviano,Bolívar Fuerte, bolivar_fuerte,VES
+Pula,Botswana Pula, botswana_pula,BWP
+Brazilian Real,Brazilian Real, brazilian_real,BRL
+Brunei Dollar,Brunei Dollar, brunei_dollar,BND
+Canadian Dollar,Canadian Dollar, canadian_dollar,CAD
+Chilean Peso,Chilean Peso, chilean_peso,CLP
+Yuan Renminbi,Chinese Yuan, chinese_yuan,CNY
+Colombian Peso,Colombian Peso, colombian_peso,COP
+Czech Koruna,Czech Koruna, czech_koruna,CZK
+Danish Krone,Danish Krone, danish_krone,DKK
+Euro,Euro, euro,EUR
+Forint,Hungarian Forint, hungarian_forint,HUF
+Iceland Krona,Icelandic Krona, icelandic_krona,ISK
+Indian Rupee,Indian Rupee, indian_rupee,INR
+Rupiah,Indonesian Rupiah, indonesian_rupiah,IDR
+Iranian Rial,Iranian Rial, iranian_rial,IRR
+New Israeli Sheqel,Israeli New Sheqel, israeli_new_sheqel,ILS
+Yen,Japanese Yen, japanese_yen,JPY
+Tenge,Kazakhstani Tenge, kazakhstani_tenge,KZT
+Won,Korean Won, korean_won,KRW
+Kuwaiti Dinar,Kuwaiti Dinar, kuwaiti_dinar,KWD
+Libyan Dinar,Libyan Dinar, libyan_dinar,LYD
+Malaysian Ringgit,Malaysian Ringgit, malaysian_ringgit,MYR
+Mauritius Rupee,Mauritian Rupee, mauritian_rupee,MUR
+Mexican Peso,Mexican Peso, mexican_peso,MXN
+Nepalese Rupee,Nepalese Rupee, nepalese_rupee,NPR
+New Zealand Dollar,New Zealand Dollar, new_zealand_dollar,NZD
+Norwegian Krone,Norwegian Krone, norwegian_krone,NOK
+Sol,Nuevo Sol, nuevo_sol,PEN
+Pakistan Rupee,Pakistani Rupee, pakistani_rupee,PKR
+Peso Uruguayo,Peso Uruguayo, peso_uruguayo,UYI
+Philippine Peso,Philippine Peso, philippine_peso,PHP
+Zloty,Polish Zloty, polish_zloty,PLN
+Qatari Rial,Qatar Riyal, qatar_riyal,QAR
+Rial Omani,Rial Omani, rial_omani,OMR
+Russian Ruble,Russian Ruble, russian_ruble,RUB
+Saudi Riyal,Saudi Arabian Riyal, saudi_arabian_riyal,SAR
+Singapore Dollar,Singapore Dollar, singapore_dollar,SGD
+Rand,South African Rand, south_african_rand,ZAR
+Sri Lanka Rupee,Sri Lanka Rupee, sri_lanka_rupee,LKR
+Swedish Krona,Swedish Krona, swedish_krona,SEK
+Swiss Franc,Swiss Franc, swiss_franc,CHF
+Baht,Thai Baht, thai_baht,THB
+Trinidad And Tobago Dollar,Trinidad And Tobago Dollar, trinidad_and_tobago_dollar,TTD
+Tunisian Dinar,Tunisian Dinar, tunisian_dinar,TND
+UAE Dirham,U.A.E. Dirham, uae_dirham,AED
+Pound Sterling,U.K. Pound Sterling, uk_pound_sterling,GBP
+US Dollar,U.S. Dollar, us_dollar,USD
