@@ -12,8 +12,27 @@ chmod 600 kaggle.json
 cd ~/Capstone/
 python fetch_resources.py
 
-to work with AWS Keyspaces:
-1. get cert from website: curl https://certs.secureserver.net/repository/sf-class2-root.crt -O
+### DOCKER RUNS ###
+#postgres run
+docker run --name postgres -e POSTGRES_HOST_AUTH_METHOD=trust -d -p 5432:5432 postgres
 
-User Name: keyspaces-at-772813384031
-Password: xIxEbQu5zdPXAzY0Ydw1Lge36FKwPri6M6PDlweyLhQ=
+#cassandra run
+docker run --name cassie  -d -p 9042:9042 cassandra
+
+#create spark network overlay
+docker network create --driver bridge spark-net-bridge
+
+#spark runs MASTER
+docker run -d --name sparkM --network spark-net-bridge -p 8080:8080 -e SPARK_MODE=master -e SPARK_RPC_AUTHENTICATION_ENABLED=no -e SPARK_RPC_ENCRYPTION_ENABLED=no -e SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no -e SPARK_SSL_ENABLED=no bitnami/spark
+
+#spark runs WORKER#1
+docker run -d --name sparkW1 --network spark-net-bridge -p 8081:8081 -e SPARK_MODE=worker -e SPARK_MASTER_URL=spark://sparkM:7077 -e SPARK_WORKER_MEMORY=512M -e SPARK_WORKER_CORES=1 -e SPARK_RPC_AUTHENTICATION_ENABLED=no -e SPARK_RPC_ENCRYPTION_ENABLED=no -e SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no -e SPARK_SSL_ENABLED=no bitnami/spark
+
+#spark runs WORKER#2
+docker run -d --name sparkW2 --network spark-net-bridge -p 8082:8081 -e SPARK_MODE=worker -e SPARK_MASTER_URL=spark://sparkM:7077 -e SPARK_WORKER_MEMORY=512M -e SPARK_WORKER_CORES=1 -e SPARK_RPC_AUTHENTICATION_ENABLED=no -e SPARK_RPC_ENCRYPTION_ENABLED=no -e SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no -e SPARK_SSL_ENABLED=no bitnami/spark
+
+#check local network
+docker network inspect spark-net-bridge
+
+#attach to container from powershell
+docker exec -u 0 -it <container name> bash
