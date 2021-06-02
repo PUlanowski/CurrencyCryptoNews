@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/spark_queries.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spark_connection_check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bash_notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bash_notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark_queries.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/spark_queries.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -46,7 +48,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/wallstreetbets_submission.json&#10;C:/Users/pit/Google Drive/Udacity/Capstone Project/crypto-markets.csv&#10;C:/Users/pit/Google Drive/Udacity/Capstone Project/docker-compose.yml" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable" />
+    <property name="settings.editor.selected.configurable" value="bigdataide_conn_settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -200,7 +202,9 @@
       <workItem from="1621659160854" duration="9589000" />
       <workItem from="1621744749540" duration="24755000" />
       <workItem from="1621837901367" duration="37643000" />
-      <workItem from="1622541302566" duration="19084000" />
+      <workItem from="1622541302566" duration="19147000" />
+      <workItem from="1622641677432" duration="31000" />
+      <workItem from="1622652625077" duration="14769000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -314,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621891700621</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="2021.06.01 - pyspark issues to solve, docker spark cluster created with success">
+      <created>1622579813327</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1622579813327</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +360,8 @@
     <MESSAGE value="2021.05.21. staging Cassandra almost done + start building star schema" />
     <MESSAGE value="2021.05.23 - working cassandra json parser and input for fact tables" />
     <MESSAGE value="2021.05.24 all tables can be populaed now using scripts. Schema still need to berefined with primary keys, constraints and indexes." />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.05.24 all tables can be populaed now using scripts. Schema still need to berefined with primary keys, constraints and indexes." />
+    <MESSAGE value="2021.06.01 - pyspark issues to solve, docker spark cluster created with success" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.06.01 - pyspark issues to solve, docker spark cluster created with success" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
