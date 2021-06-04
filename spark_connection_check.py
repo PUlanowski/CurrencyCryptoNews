@@ -1,10 +1,15 @@
 from pyspark.sql import SparkSession
+from cassandra.cluster import Cluster
+import pandas as pd
+import os
 
 spark = SparkSession.builder \
         .appName('postgres-cnn') \
         .master('spark://0.0.0.0:7077') \
-        .config('spark.jars', 'C:\\Users\\pit\\Google Drive\\Udacity\\Capstone Project\\jdbc\\postgresql-42.2.5.jar') \
+        .config('spark.jars', 'C:\\Users\\pit\\Google Drive\\Udacity\\Capstone Project\\jdbc\\postgresql-42.2.5.jar',) \
         .getOrCreate()
+
+spark.stop()
 
 df = spark.read \
     .format('jdbc') \
@@ -18,24 +23,15 @@ df = spark.read \
 df.printSchema()
 df.columns
 
-spark.stop()
 
 ################################################
-# https://docs.datastax.com/en/archived/datastax_enterprise/4.6/datastax_enterprise/spark/sparkPySpark.html
-# https://github.com/datastax/spark-cassandra-connector/blob/master/doc/0_quick_start.md
-from pyspark.sql import SQLContext, SparkSession
+#CASSANDRA######################################
+################################################
 
-spark = SparkSession.builder \
-    .appName('cassandra-cnn') \
-    .config('spark.cassandra.connection.host', 'localhost') \
-    .config('spark.cassandra.connection.port', '9042') \
-    .config('spark.jars', 'C:\\Users\\pit\\Google Drive\\Udacity\\Capstone Project\\jdbc\\spark-cassandra-connector_2.11-2.0.2.jar') \
-    .getOrCreate()
+cluster = Cluster(['localhost'])
+session = cluster.connect('cnn')
+rows = session.execute('select * from wallstreetbets_all limit 5;')
+for row in rows:
+    print(row)
+df = pd.DataFrame(list(rows))
 
-ds = sqlContext \
-  .read \
-  .format('org.apache.spark.sql.cassandra') \
-  .options(table='tablename', keyspace='keyspace_name') \
-  .load()
-
-ds.show(10)
