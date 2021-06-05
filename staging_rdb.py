@@ -68,7 +68,7 @@ def stage_ccy_rates(cur):
     s_columns = ' '.join(map(str, l_columns))
     s_columns = s_columns[:-1]
 
-    cur.execute(sql.SQL(sql_qu  qeries.drop_ccy_rates))
+    cur.execute(sql.SQL(sql_queries.drop_ccy_rates))
     cur.execute(sql.SQL(sql_queries.create_ccy_rates.format \
                         (s_columns)))
 

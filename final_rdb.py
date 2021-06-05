@@ -64,7 +64,7 @@ def create_star_schema(cur):
         cur.execute(sql.SQL(sql_queries.dim_crypto.format \
                                 (crypto.values[i])))
 
-    return cur, crypto, crypto_count, ccy_list, crypto_dates, ccy_nm_dict
+    return cur, crypto, crypto_count
 
 def insert_fact_data(cur, crypto, ccy_map):
     crypto_list = crypto.values.tolist()
@@ -99,7 +99,7 @@ def insert_dim_ccy(cur, ccy_map):
                 ccy, "'"+name+"'")))
 
 
-def insert_crypto(cur, crypto, crypto_count ):
+def insert_crypto(cur, crypto):
 
     for symbol in crypto:
         symbol_l = symbol.lower()
@@ -110,3 +110,11 @@ def insert_crypto(cur, crypto, crypto_count ):
         cur.execute(sql.SQL(sql_queries.update_crypto.format(
             symbol_l)))
         cur.execute(sql.SQL(sql_queries.drop_crypto_view))
+
+
+if __name__=="__main__":
+    conecct_to_db()
+    create_star_schema(cur)
+    insert_fact_data(cur, crypto, ccy_map)
+    insert_dim_ccy(cur, ccy_map)
+    insert_crypto(cur, crypto)
