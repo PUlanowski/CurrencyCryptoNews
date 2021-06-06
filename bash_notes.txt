@@ -13,23 +13,22 @@ cd ~/Capstone/
 python fetch_resources.py
 
 ### DOCKER RUNS ###
-#postgres run
-docker run --name postgres -e POSTGRES_HOST_AUTH_METHOD=trust -d -p 5432:5432 postgres
-
-#cassandra run
-docker run --name cassie  -d -p 9042:9042 cassandra
 
 #create spark network overlay
 docker network create --driver bridge spark-net-bridge
 
-#spark runs MASTER
-docker run -d --name sparkM --network spark-net-bridge -p 8080:8080 -p 7077:7077 -e SPARK_MODE=master -e SPARK_RPC_AUTHENTICATION_ENABLED=no -e SPARK_RPC_ENCRYPTION_ENABLED=no -e SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no -e SPARK_SSL_ENABLED=no bitnami/spark
+#postgres run
+docker run --network spark-net-bridge --name postgres -e POSTGRES_HOST_AUTH_METHOD=trust -d -p 5432:5432 postgres
 
-#spark runs WORKER#1
-docker run -d --name sparkW1 --network spark-net-bridge -p 8081:8081 -e SPARK_MODE=worker -e SPARK_MASTER_URL=spark://sparkM:7077 -e SPARK_WORKER_MEMORY=1G -e SPARK_WORKER_CORES=1 -e SPARK_RPC_AUTHENTICATION_ENABLED=no -e SPARK_RPC_ENCRYPTION_ENABLED=no -e SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no -e SPARK_SSL_ENABLED=no bitnami/spark
+#cassandra run
+docker run --network spark-net-bridge --name cassie  -d -p 9042:9042 cassandra
 
-#spark runs WORKER#2
-docker run -d --name sparkW2 --network spark-net-bridge -p 8082:8081 -e SPARK_MODE=worker -e SPARK_MASTER_URL=spark://sparkM:7077 -e SPARK_WORKER_MEMORY=1G -e SPARK_WORKER_CORES=1 -e SPARK_RPC_AUTHENTICATION_ENABLED=no -e SPARK_RPC_ENCRYPTION_ENABLED=no -e SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no -e SPARK_SSL_ENABLED=no bitnami/spark
+#jupyter notebook run
+docker run --network spark-net-bridge -p 8888:8888 -p 4040:4040 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark-notebook
+
+#jupyter container copy
+docker cp "C:\Users\pit\Google Drive\Udacity\Capstone Project\jdbc\postgresql-42.2.5.jar" fde9a5008c29:/home/jovyan/postgresql-42.2.5.jar
+docker cp "C:\Users\pit\Google Drive\Udacity\Capstone Project\analysis.ipynb" fde9a5008c29:/home/jovyan/analysis.ipynb
 
 #check local network
 docker network inspect spark-net-bridge
@@ -37,5 +36,8 @@ docker network inspect spark-net-bridge
 #attach to container from powershell
 docker exec -u 0 -it <container name> bash
 
-#run jupyter notebook in container
-docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark-notebook
+
+#attach to container from powershell
+docker exec -u 0 -it <container name> bash
+
+docker run --network spark-net-bridge -p 8888:8888 -p 4040:4040 -p 8080:8080 -e -d JUPYTER_ENABLE_LAB=yes --name pyspark-test jupyter/pyspark-notebook

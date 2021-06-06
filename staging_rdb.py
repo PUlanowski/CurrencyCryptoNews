@@ -5,8 +5,7 @@ import configparser
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import pandas as pd
-import itertools
-from datetime import datetime
+
 
 config = configparser.ConfigParser()
 config.read('cfg.cfg')
