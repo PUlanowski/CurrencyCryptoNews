@@ -24,7 +24,7 @@ docker run --network spark-net-bridge --name postgres -e POSTGRES_HOST_AUTH_METH
 docker run --network spark-net-bridge --name cassie  -d -p 9042:9042 cassandra
 
 #container copy
-docker cp "C:\Users\pit\Google Drive\Udacity\Capstone Project\jdbc\postgresql-42.2.5.jar" 9093c9128018:/opt/bitnami/spark/jars/postgresql-42.2.5.jar
+docker cp "C:\Users\pit\Google Drive\Udacity\Capstone Project\jdbc\postgresql-42.2.5.jar" a2371adda7ed:/opt/bitnami/spark/jars/postgresql-42.2.5.jar
 
 #check local network
 docker network inspect spark-net-bridge
@@ -47,3 +47,6 @@ docker network inspect spark-net-bridge
 
 #spark runs WORKER#1
 docker run -d --name sparkW1 --network spark-net-bridge -p 8081:8081 -e SPARK_MODE=worker -e SPARK_MASTER_URL=spark://sparkM:7077 -e SPARK_WORKER_MEMORY=1G -e SPARK_WORKER_CORES=1 -e SPARK_RPC_AUTHENTICATION_ENABLED=no -e SPARK_RPC_ENCRYPTION_ENABLED=no -e SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no -e SPARK_SSL_ENABLED=no bitnami/spark:3.0.0
+
+#from root
+#chmod -R 777 /opt/bitnami/spark
