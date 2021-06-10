@@ -34,7 +34,7 @@ spark.sql("select table_name from DIMS where table_name like 'dim%'")
 #%%
 spark.sql("select table_name from DIMS where table_name like 'dim%'").count()
 pdf_tables = spark.sql("select table_name from DIMS where table_name like 'dim%'").toPandas()
-pdf_tables = pdf_tables.head(10) #head(n) for testing
+#pdf_tables = pdf_tables.head(100) #head(n) for testing
 #%%
 pdf_all_diff = pd.DataFrame()
 
@@ -54,7 +54,7 @@ for table in pdf_tables['table_name']:
     df_vals = df.withColumn('diff', (df_avg - df['closure_rate']))
     df_vals = df_vals.withColumn('abs_diff', abs(df_vals.diff)).distinct()
     df_vals = df_vals.sort(col('abs_diff').desc())
-    pdf_vals = df_vals.limit(5).toPandas()
+    pdf_vals = df_vals.limit(10).toPandas()
     pdf_vals
     pdf_all_diff = pdf_all_diff.append(pdf_vals, ignore_index=True)
 
@@ -67,37 +67,68 @@ for date in dates:
     dat = str(date.strftime('%Y-%m-%d'))
     datelst += [dat]
 
+datelst = sorted(datelst)
 datelst = str(datelst).strip('[]')
 
 #%%
 ######################CASSANDRA#####################
 from cassandra.cluster import Cluster
-from cassandra import query
 
 cluster = Cluster(['localhost'], port=9042)
 session = cluster.connect()
 session.set_keyspace('cnn')
 
-
 q = """
-SELECT author,
- created_utc_date,
- selftext
- FROM cnn.wallstreetbets_all
-WHERE created_utc_date IN {}{}{}
+SELECT *
+FROM wb_titles
+WHERE date IN {}{}{}
 ALLOW FILTERING;
 """.format('(',datelst,')')
 
-pdf_posts = pd.DataFrame(session.execute(q))
+q = """
+SELECT date, count(*)
+FROM wb_titles
+WHERE date IN {}{}{}
+ALLOW FILTERING;
+""".format('(',datelst,')')
+
+try:
+    pdf_titles = pd.DataFrame(session.execute(q))
+except Exception as e:
+    print(e)
 
 #%%
-pdf_posts
-pdf_all_diff
-
-pdf_posts = pdf_posts.rename(columns={'created_utc_date': 'date'})
-
-new_row = {'author':'TEST', 'date':'2016-02-26', 'selftext':'TEST'}
-pdf_posts = pdf_posts.append(new_row, ignore_index=True)
+#converting cassandra.util.Date to datetime.date
+for n in range(0, len(pdf_titles)):
+    pdf_titles['date'][n] = pdf_titles['date'][n].date()
 
 
-pdf_merged = pdf_all_diff.merge(pdf_posts, on='date')
+#%%
+#SAMPLE QUERIES
+#get all titles text from selected day
+pdf_group_titles = pdf_titles.groupby('date')['title'].apply('| '.join).reset_index()
+#get all titles quantity from selected day
+pdf_group_titles_count = pdf_titles.groupby('date')['title'].agg('count').reset_index()
+#get all authors from selected day
+pdf_group_authors = pdf_titles.groupby('date')['author'].apply('| '.join).reset_index()
+#get dates when ccy rates were posted
+pdf_group_ccy_name = pdf_all_diff.groupby('date')['name'].apply('| '.join).reset_index()
+#get all currencies rates quantity from selected day
+pdf_group_ccy_name_count = pdf_all_diff.groupby('date')['name'].agg('count').reset_index()
+#get type, name of ccy and calc min/mean/max from abs_diff
+pdf_group_ccy_diff = pdf_all_diff.groupby(['type','name']).agg({'abs_diff':['min', 'mean', 'max']})
+pdf_group_ccy_diff = pdf_group_ccy_diff.sort_index()
+#get dates and ccy names alongside titles for further association analysis
+pdf_merge1 = pdf_group_ccy_name.merge(pdf_group_titles, on='date')
+#get dates and ccy names alongside posts author for further association analysis
+pdf_merge2 = pdf_group_ccy_name.merge(pdf_group_authors, on='date')
+#get ccy names quantity and titles posted quantity for further analysis
+pdf_merge3 = pdf_group_ccy_name_count.merge(pdf_group_titles_count, on='date')
+
+#%%
+#example chart
+from matplotlib import pyplot as plt
+ax=plt.gca()
+pdf_merge3.plot(kind='line', x='date', y='name', color='red', ax=ax)
+pdf_merge3.plot(kind='scatter', x='date', y='title', color='blue', ax=ax)
+plt.show()
