@@ -102,4 +102,3 @@ Important steps listed:
 <u>note:</u></br>
 As my first attempt here I'd generally base this solution in cloud. It'd solve all 3 challenges and simplify greatly solution. Automatic scaling and native communication between cloud components would be advantage to sufficiently fulfill business requirements. 
 
-

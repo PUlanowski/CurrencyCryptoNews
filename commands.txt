@@ -52,4 +52,3 @@ docker run -d --name sparkW1 --network spark-net-bridge -p 8081:8081 -e SPARK_MO
 
 #from root
 #chmod -R 777 /opt/bitnami/spark
-

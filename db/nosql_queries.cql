@@ -45,4 +45,3 @@ title text,
 url text,
 PRIMARY KEY (domain, created_utc));
 
-

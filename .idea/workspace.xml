@@ -5,14 +5,16 @@
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bash_notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copy_to_rds_stage.psql" beforeDir="false" afterPath="$PROJECT_DIR$/db/copy_to_rds_stage.psql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_rdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/infra.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nosql_queries.cql" beforeDir="false" afterPath="$PROJECT_DIR$/db/nosql_queries.cql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pipeline.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/pipeline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/sql_queries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_rdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/copy_to_rds_stage.psql" beforeDir="false" afterPath="$PROJECT_DIR$/db/copy_to_rds_stage.psql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/nosql_queries.cql" beforeDir="false" afterPath="$PROJECT_DIR$/db/nosql_queries.cql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/sql_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/sql_queries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fetch_resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fetch_resources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/final_nosql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/final_nosql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/final_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/final_rdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/staging_nosql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/staging_nosql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/staging_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/staging_rdb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +65,7 @@
       <recent name="C:\Users\pit\Google Drive\Udacity\Capstone Project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pit\Google Drive\Udacity\Capstone Project\src" />
       <recent name="C:\Users\pit\Google Drive\Udacity\Capstone Project\db" />
       <recent name="C:\Users\pit\Google Drive\Udacity\Capstone Project\screenshots" />
       <recent name="C:\Users\pit\Google Drive\Udacity\Capstone Project" />
@@ -104,7 +107,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final_rdb.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\pit\Google Drive\Udacity\Capstone Project\src\final_rdb.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -126,7 +129,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/staging_nosql.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\pit\Google Drive\Udacity\Capstone Project\src\staging_nosql.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,7 +160,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="staging_rdb (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="staging_rdb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Capstone Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -170,7 +173,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/staging_rdb.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\pit\Google Drive\Udacity\Capstone Project\src\staging_rdb.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -253,7 +256,7 @@
       <workItem from="1623232600408" duration="36303000" />
       <workItem from="1623309600286" duration="29460000" />
       <workItem from="1623407056582" duration="18173000" />
-      <workItem from="1623440162095" duration="588000" />
+      <workItem from="1623440162095" duration="1189000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -437,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623439251069</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Final version_1.1">
+      <created>1623440862822</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1623440862822</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +466,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=".gitignore" />
     <MESSAGE value="09.05.2021 files can be moved to S3" />
     <MESSAGE value="10.05.2021" />
     <MESSAGE value="11.05.2021" />
@@ -481,7 +490,8 @@
     <MESSAGE value="Final version_1.0 markup_fix_2" />
     <MESSAGE value="Final version_1.0 markup_fix_3" />
     <MESSAGE value="Final version_1.0 markup_fix_4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final version_1.0 markup_fix_4" />
+    <MESSAGE value="Final version_1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version_1.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
