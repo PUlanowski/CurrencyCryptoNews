@@ -36,7 +36,6 @@ Those containers are connected to one docker network.</br>
 ![image](infra.png)
   
 ## Data
-1. [Infrastructure](#infra) 2. [Data](#data) 3. [Data model](#dbmodel) 4. [Project files](#files) 5. [Process](#proc) 6. [Hypothetical challenge](#chal)</br></br>
 
 For this project I aim to make the most automatic and generic solution so it can be replicated. I've used 3 big datasets pulled directly from kaggle. To make it possible registration and account setup (api token) is required.</br>
 Sets:
@@ -49,7 +48,6 @@ Each of those datasets has it's own challenges:</br>
    Ad 3. This dataset was biggest processing and cleaning challenge. Firstly I've chosen columns I'd find useful for further analysis and then take each JSON, extract data and clean it (special non-consumable characters, date format etc.). With such prepared data (reflects only 1 record) i was able to parse it into Cassandra. Due to not-normalized nature of this data I've decided to use non-relational model. Advantage is also response time (Cassandra is very good with reading data) given large amount of data to be used. There was not much quality issues but some data wrangling based on single JSON had to be done.</br>
    
 # Data model
-1. [Infrastructure](#infra) 2. [Data](#data) 3. [Data model](#dbmodel) 4. [Project files](#files) 5. [Process](#proc) 6. [Hypothetical challenge](#chal)</br></br>
 
 I've started with pre-loading staging data to appropriate tables. Due to nature of data I've decided to make use of strong sides from both relational and non-relational data models. For currencies data I've decided on star model given certainty of data point and availability. To connect both conventional and crypto-currencies my fact table contains only symbol for ccy and type. Dimension tables differ between global/crypto but has all available data. I've decided this simple schema should be sufficient.</br>
 For nosql database I've staged data and thinking of future analytic queries I need to run I've prepared two tables with extracted only necessary information. </br>
@@ -57,7 +55,6 @@ For nosql database I've staged data and thinking of future analytic queries I ne
 ![image](pipeline.png)
 
 # Project files
-1. [Infrastructure](#infra) 2. [Data](#data) 3. [Data model](#dbmodel) 4. [Project files](#files) 5. [Process](#proc) 6. [Hypothetical challenge](#chal)</br></br>
 
 In alphabetical order:
 1. analysis.py - file that contain final transformation and produce analysuis results for sample questions. Here RDB and noSQL data met
@@ -77,7 +74,6 @@ In alphabetical order:
 15. staging_rdb.py - staging RDB data
 
 # Process
-1. [Infrastructure](#infra) 2. [Data](#data) 3. [Data model](#dbmodel) 4. [Project files](#files) 5. [Process](#proc) 6. [Hypothetical challenge](#chal)</br></br>
 
 Important steps listed:
 0. Ensure JDBC and other required drivers are accessible
@@ -98,7 +94,6 @@ Important steps listed:
 15. Run analysis file or copy sections to Jupyter notebook for step by step output
 
 #Hypothetical challenge
-1. [Infrastructure](#infra) 2. [Data](#data) 3. [Data model](#dbmodel) 4. [Project files](#files) 5. [Process](#proc) 6. [Hypothetical challenge](#chal)</br></br>
    
 1. <b>If the data was increased by 100x</b> I'd probably use some cloud storage to avoid copy data to docker containers. I'd use MapReduce approach with HDSF or Parquete to store and access this data efficiently. Ideally all my infrastucture would be in the same cluster to lower any possible network traffic.
 2. <b>If the pipelines were run on a daily basis by 7am</b> I'd build whole pipeline on Apache Airflow or another orchestrator that can be configured. Also I'd automate any manual shell scripting to have one smooth pipeline.
