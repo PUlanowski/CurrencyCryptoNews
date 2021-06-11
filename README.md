@@ -33,7 +33,7 @@ On Windows machine I run Docker with 3 containers:
 - Cassandra database 3.11.9 </br>
 Those containers are connected to one docker network.</br>
   To communicate with them I was using either directly container CLI or python API. To service docker I was running commands through Windows Powershell. Simplified structure:</br>
-![image](infra.png)
+![image](screenshots/infra.png)
   
 ## Data
 
@@ -52,13 +52,13 @@ Each of those datasets has it's own challenges:</br>
 I've started with pre-loading staging data to appropriate tables. Due to nature of data I've decided to make use of strong sides from both relational and non-relational data models. For currencies data I've decided on star model given certainty of data point and availability. To connect both conventional and crypto-currencies my fact table contains only symbol for ccy and type. Dimension tables differ between global/crypto but has all available data. I've decided this simple schema should be sufficient.</br>
 For nosql database I've staged data and thinking of future analytic queries I need to run I've prepared two tables with extracted only necessary information. </br>
 ## Pipeline
-![image](pipeline.png)
+![image](screenshots/pipeline.png)
 
 # Content
 
 In alphabetical order:
 1. analysis.py - file that contain final transformation and produce analysuis results for sample questions. Here RDB and noSQL data met
-2. bash_notes.txt - some commands to run in Powershell and/or bash
+2. commands.txt - some commands to run in Powershell and/or bash
 3. ccy_map.csv - manual input file with mapping between symbols and ccy names
 4. cfg.cfg - <b>not included</b>, here is config for all connections and access data
 5. copy_to_rds_stage.psql - commands and notes for docker containter psgl

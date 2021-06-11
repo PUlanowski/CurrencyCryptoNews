@@ -1,5 +1,5 @@
 cfg.cfg
-bash_notes.txt
+commands.txt
 /currency_exchange_rates_02-01-1995_-_02-05-2018.csv
 /crypto-markets.csv
 /wallstreetbets_submission.json
@@ -7,3 +7,4 @@ bash_notes.txt
 testing.py
 slaves
 /infra_schema.xlsx
+/jdbc/

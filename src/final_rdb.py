@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import sql_queries
+from db import sql_queries
 import psycopg2
 import configparser
 from psycopg2 import sql

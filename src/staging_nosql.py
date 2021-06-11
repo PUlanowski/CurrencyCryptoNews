@@ -57,7 +57,7 @@ def insert_data():
     wb = []
 
     for line in open(
-            'wallstreetbets_submission.json', 'r'):
+            '../wallstreetbets_submission.json', 'r'):
         wb.append(json.loads(line))
 
     for i in range(0, len(wb)):

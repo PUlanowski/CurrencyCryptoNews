@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bash_notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copy_to_rds_stage.psql" beforeDir="false" afterPath="$PROJECT_DIR$/db/copy_to_rds_stage.psql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_rdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/infra.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nosql_queries.cql" beforeDir="false" afterPath="$PROJECT_DIR$/db/nosql_queries.cql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pipeline.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/pipeline.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/sql_queries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/staging_rdb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +63,8 @@
       <recent name="C:\Users\pit\Google Drive\Udacity\Capstone Project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pit\Google Drive\Udacity\Capstone Project\db" />
+      <recent name="C:\Users\pit\Google Drive\Udacity\Capstone Project\screenshots" />
       <recent name="C:\Users\pit\Google Drive\Udacity\Capstone Project" />
     </key>
   </component>
@@ -240,7 +252,8 @@
       <workItem from="1623176363979" duration="12185000" />
       <workItem from="1623232600408" duration="36303000" />
       <workItem from="1623309600286" duration="29460000" />
-      <workItem from="1623407056582" duration="18120000" />
+      <workItem from="1623407056582" duration="18173000" />
+      <workItem from="1623440162095" duration="588000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -417,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623439165276</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Final version_1.0 markup_fix_4">
+      <created>1623439251069</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1623439251069</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +456,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init commit" />
     <MESSAGE value=".gitignore" />
     <MESSAGE value="09.05.2021 files can be moved to S3" />
     <MESSAGE value="10.05.2021" />
@@ -461,7 +480,8 @@
     <MESSAGE value="Final version_1.0 markup_fix_1" />
     <MESSAGE value="Final version_1.0 markup_fix_2" />
     <MESSAGE value="Final version_1.0 markup_fix_3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final version_1.0 markup_fix_3" />
+    <MESSAGE value="Final version_1.0 markup_fix_4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version_1.0 markup_fix_4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
