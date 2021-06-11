@@ -240,7 +240,7 @@
       <workItem from="1623176363979" duration="12185000" />
       <workItem from="1623232600408" duration="36303000" />
       <workItem from="1623309600286" duration="29460000" />
-      <workItem from="1623407056582" duration="18030000" />
+      <workItem from="1623407056582" duration="18120000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -410,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623439059324</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Final version_1.0 markup_fix_3">
+      <created>1623439165276</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1623439165276</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +460,8 @@
     <MESSAGE value="Final version_1.0" />
     <MESSAGE value="Final version_1.0 markup_fix_1" />
     <MESSAGE value="Final version_1.0 markup_fix_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final version_1.0 markup_fix_2" />
+    <MESSAGE value="Final version_1.0 markup_fix_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version_1.0 markup_fix_3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

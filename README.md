@@ -7,7 +7,7 @@ I have incorporated for this purpose relational and non-relational database, doc
 1. [Infrastructure](#infrastructure)
 2. [Data](#data)
 3. [Model](#model)
-4. [Files](#files)
+4. [Content](#content)
 5. [Process](#process)
 6. [Challenge](#challenge)
 
@@ -54,7 +54,7 @@ For nosql database I've staged data and thinking of future analytic queries I ne
 ## Pipeline
 ![image](pipeline.png)
 
-# Files
+# Content
 
 In alphabetical order:
 1. analysis.py - file that contain final transformation and produce analysuis results for sample questions. Here RDB and noSQL data met
