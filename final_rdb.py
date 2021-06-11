@@ -96,7 +96,8 @@ def insert_dim_ccy(cur, ccy_map):
             name = ccy_map['name'][i]
             cur.execute(sql.SQL(
                 sql_queries.update_dim_ccy.format(
-                ccy, "'"+name+"'")))
+                ccy, "'"+name+"'", "'"ccy"'")))
+
 
 
 def insert_crypto(cur, crypto):
@@ -108,7 +109,7 @@ def insert_crypto(cur, crypto):
         cur.execute(sql.SQL(sql_queries.insert_crypto.format(
             symbol_l, "'"+symbol+"'" )))
         cur.execute(sql.SQL(sql_queries.update_crypto.format(
-            symbol_l)))
+            symbol_l, "'"+symbol+"'")))
         cur.execute(sql.SQL(sql_queries.drop_crypto_view))
 
 

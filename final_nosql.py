@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #%%
 from cassandra.cluster import Cluster
 from cassandra import query

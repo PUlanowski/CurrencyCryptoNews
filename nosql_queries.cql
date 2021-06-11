@@ -1,4 +1,4 @@
---Connect to Cassandra from docker via 'cqlsh' command
+--Connect to Cassandra from docker cli via 'cqlsh' command
 
 --Create tablespace
 
