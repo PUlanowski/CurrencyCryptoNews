@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2c76f-1d52-452e-b198-168359f28e55" name="Default Changelist" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/pit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pipeline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bash_notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bash_notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_nosql.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_nosql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_rdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_rdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nosql_queries.cql" beforeDir="false" afterPath="$PROJECT_DIR$/nosql_queries.cql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_for_future.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_queries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +241,7 @@
       <workItem from="1623176363979" duration="12185000" />
       <workItem from="1623232600408" duration="36303000" />
       <workItem from="1623309600286" duration="29460000" />
-      <workItem from="1623407056582" duration="17198000" />
+      <workItem from="1623407056582" duration="17704000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1620327787033</created>
@@ -404,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623100537531</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Final version_1.0">
+      <created>1623438332883</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1623438332883</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +437,8 @@
     <MESSAGE value="2021.06.05 fetch tables in RDB but no success with spark" />
     <MESSAGE value="2021.06.06 docker network issues fix, still no cassandra connection" />
     <MESSAGE value="2021.06.07 postgres data wrangling started, cassandra-driver not implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.06.07 postgres data wrangling started, cassandra-driver not implemented" />
+    <MESSAGE value="Final version_1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version_1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,14 +4,14 @@ Aim for this project was to prepare data pipeline to answer question "how and if
 I have incorporated for this purpose relational and non-relational database, docker and various methods for achieving main goal.
 
 # Table of contents
-1. [Infrastructure](#infra)
+1. [Infrastructure](#infrastructure)
 2. [Data](#data)
-3. [Data model](#dbmodel)
-4. [Project files](#files)
-5. [Process](#proc)
-6. [Hypothetical challenge](#chal)
+3. [Data model](#data-model)
+4. [Project files](#project-files)
+5. [Process](#process)
+6. [Hypothetical challenge](#hypothetical-challenge)
 
-# Infrastructure
+# Infrastructure 
 Initial idea was to build cloud solution, however due to some service being available in paid plans I've decided to go with docker containers.</br>
 ## Software
 I was using:</br>
