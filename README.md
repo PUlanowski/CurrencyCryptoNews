@@ -6,10 +6,10 @@ I have incorporated for this purpose relational and non-relational database, doc
 # Table of contents
 1. [Infrastructure](#infrastructure)
 2. [Data](#data)
-3. [Data model](#data-model)
-4. [Project files](#project-files)
+3. [Model](#model)
+4. [Files](#files)
 5. [Process](#process)
-6. [Hypothetical challenge](#hypothetical-challenge)
+6. [Challenge](#challenge)
 
 # Infrastructure 
 Initial idea was to build cloud solution, however due to some service being available in paid plans I've decided to go with docker containers.</br>
@@ -47,14 +47,14 @@ Each of those datasets has it's own challenges:</br>
    Ad 2. This dataset were different to previous dataset. It is much bigger and has row structure meaning there are any duplicate values in date column. To parse this dataset to RDB I had to verify and change some special characters that cannot be consume by Postgres. Apart from that there were no major quality issues in dataset.</br>
    Ad 3. This dataset was biggest processing and cleaning challenge. Firstly I've chosen columns I'd find useful for further analysis and then take each JSON, extract data and clean it (special non-consumable characters, date format etc.). With such prepared data (reflects only 1 record) i was able to parse it into Cassandra. Due to not-normalized nature of this data I've decided to use non-relational model. Advantage is also response time (Cassandra is very good with reading data) given large amount of data to be used. There was not much quality issues but some data wrangling based on single JSON had to be done.</br>
    
-# Data model
+# Model
 
 I've started with pre-loading staging data to appropriate tables. Due to nature of data I've decided to make use of strong sides from both relational and non-relational data models. For currencies data I've decided on star model given certainty of data point and availability. To connect both conventional and crypto-currencies my fact table contains only symbol for ccy and type. Dimension tables differ between global/crypto but has all available data. I've decided this simple schema should be sufficient.</br>
 For nosql database I've staged data and thinking of future analytic queries I need to run I've prepared two tables with extracted only necessary information. </br>
 ## Pipeline
 ![image](pipeline.png)
 
-# Project files
+# Files
 
 In alphabetical order:
 1. analysis.py - file that contain final transformation and produce analysuis results for sample questions. Here RDB and noSQL data met
@@ -93,7 +93,7 @@ Important steps listed:
 14. in CQLsh populate tables create in step 13. (commands found also in this file)
 15. Run analysis file or copy sections to Jupyter notebook for step by step output
 
-#Hypothetical challenge
+# Challenge
    
 1. <b>If the data was increased by 100x</b> I'd probably use some cloud storage to avoid copy data to docker containers. I'd use MapReduce approach with HDSF or Parquete to store and access this data efficiently. Ideally all my infrastucture would be in the same cluster to lower any possible network traffic.
 2. <b>If the pipelines were run on a daily basis by 7am</b> I'd build whole pipeline on Apache Airflow or another orchestrator that can be configured. Also I'd automate any manual shell scripting to have one smooth pipeline.
