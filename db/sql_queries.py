@@ -97,3 +97,7 @@ get_table_names = "SELECT table_name \
                     FROM information_schema.tables \
                     WHERE table_schema = 'public' \
                     ORDER BY table_name;"
+
+#QUALITY CHECK
+count_stage = "SELECT COUNT(*) FROM {}; "
+exists_stage ="SELECT EXISTS (SELECT * FROM {});"
