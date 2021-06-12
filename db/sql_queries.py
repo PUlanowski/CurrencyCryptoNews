@@ -15,7 +15,8 @@ create_postgres_db = 'CREATE DATABASE cnn'
 
 create_ccy_map = 'CREATE TABLE IF NOT EXISTS ccy_map( \
                   ccy VARCHAR(3), \
-                  ccy_full VARCHAR \
+                  ccy_full VARCHAR, \
+                  PRIMARY KEY(ccy) \
                  );'
 
 create_ccy_rates = 'CREATE TABLE IF NOT EXISTS ccy_rates_stage( \
@@ -52,7 +53,8 @@ dim_ccy = 'CREATE TABLE IF NOT EXISTS dim_ccy_{}( \
                     date DATE, \
                     name VARCHAR, \
                     closure_rate FLOAT, \
-          PRIMARY KEY(ccy, date));'
+          PRIMARY KEY(ccy, date), \
+          FOREIGN KEY(ccy));'
 
 dim_crypto = 'CREATE TABLE IF NOT EXISTS dim_crypto_{}( \
                     ccy VARCHAR, \
@@ -62,7 +64,8 @@ dim_crypto = 'CREATE TABLE IF NOT EXISTS dim_crypto_{}( \
                     closure_rate FLOAT, \
                     close_ratio FLOAT, \
                     spread FLOAT, \
-             PRIMARY KEY(ccy, date));'
+             PRIMARY KEY(ccy, date), \
+             FOREIGN KEY(ccy));'
 
 
 #INSERT VALUES
