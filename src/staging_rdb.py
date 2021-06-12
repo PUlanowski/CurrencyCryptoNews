@@ -11,6 +11,10 @@ config = configparser.ConfigParser()
 config.read('cfg.cfg')
 
 def create_postgress_db():
+    """
+    This is standard connection to Postgres database. It uses cfg data from separate file.
+    :return: cursor that is required to query database.
+    """
     conn = psycopg2.connect(
         host = config['POSTGRES']['HOST'],
         user = config['POSTGRES']['USER'],
@@ -23,6 +27,10 @@ def create_postgress_db():
     conn.close()
 
 def reconecct_to_db():
+    """"
+    Reconnecting to Postgress DB after creating dedicated database
+    :return: cursor that is required to query database.
+    """
     conn = psycopg2.connect(
         host = config['POSTGRES']['HOST'],
         user = config['POSTGRES']['USER'],
@@ -36,6 +44,11 @@ def reconecct_to_db():
     return cur
 
 def stage_ccy_mapping(cur):
+    """
+    Prepare currency mapping for further processing as PG table
+    :param cur: Postgres connection cursor
+    :return: Populated mapping table
+    """
     ccy_map = pd.read_csv(config['HELPERS']['CCYMAP'])
     max_num = len(ccy_map) -1
 
@@ -49,6 +62,11 @@ def stage_ccy_mapping(cur):
             ("'"+ccy+"'" , "'"+ccy_nm+"'")))
 
 def stage_ccy_rates(cur):
+    """
+    Creates stage currencies table for non-crypto type
+    :param cur: Postgres connection cursor
+    :return: Table schema for ccy rates
+    """
     data = pd.read_csv(config['KAGGLE']['CCY'])
     #print for SQL create statement
     columns = data.columns
@@ -72,6 +90,11 @@ def stage_ccy_rates(cur):
                         (s_columns)))
 
 def stage_crypto(cur):
+    """
+    Creates stage currencies table for crypto type
+    :param cur: Postgres connection cursor
+    :return: Table schema for crypto-ccy rates
+    """
     config = configparser.ConfigParser()
     config.read('cfg.cfg')
     data = pd.read_csv(config['KAGGLE']['CRYPTO'])

@@ -5,6 +5,10 @@ from datetime import datetime
 
 
 def stage_wallstreetbets():
+    """
+    This function creates connection to Cassandra DB and creates table for further population
+    :return: Ready Cassandra keyspace/table to accommodate wallstreetbets data
+    """
     cluster = Cluster(['localhost'], port=9042)
     global session
     session = cluster.connect()
@@ -52,6 +56,10 @@ def stage_wallstreetbets():
 
 
 def insert_data():
+    """
+    This function do pre-processing ETL on JSONs and populate Cassandra keyspace
+    :return: Populated Cassandra keyspace/table with selected wallstreetbets data
+    """
 
     keys = ['created_utc_date', 'domain', 'author', 'author_created_utc', 'author_flair_css_class', 'author_flair_text', 'author_fullname', 'created_utc', 'distinguished', 'edited', 'full_link', 'gilded', 'id', 'is_self', 'num_comments', 'over_18', 'permalink', 'retrieved_on', 'score', 'selftext', 'stickied', 'subreddit', 'subreddit_id', 'thumbnail', 'title', 'url', 'post_hint', 'banned_by', 'link_flair_text', 'contest_mode', 'clicked']
     wb = []
